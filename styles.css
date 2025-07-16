@@ -227,6 +227,10 @@ ul li {
 
   .lyrics {
     font-size: 16px;
+    word-break: keep-all;
+    line-height: 1.8;
+    max-width: 400px;
+    padding: 0 24px;
   }
 }/* 기본 스타일 수정 (모바일 중심으로) */
 body {
@@ -375,34 +379,60 @@ ul li {
   width: 100%;
   font-size: 16px;
 }
-
-/* 반응형 미디어 쿼리 (아이폰 14 포함) */
 @media (max-width: 420px) {
-  #content {
-    width: 95vw;
-    padding: 16px;
-    min-height: 95vh;
-  }
+    body {
+        font-size: 14px;
+        padding: 0 24px;
+        line-height: 1.7;
+    }
 
-  body {
-    font-size: 18px;
-  }
+    #content {
+        width: 100%;
+        max-width: 400px;
+        padding: 40px 20px;
+        min-height: 95vh;
+        box-sizing: border-box;
+    }
 
-  ul li {
-    padding: 12px 8px;
-    font-size: 18px;
-  }
+    .song-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 
-  .back-button {
-    font-size: 16px;
-    padding: 10px 12px;
-  }
+    .song-content img {
+        width: 70%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
 
-  .lyrics {
-    font-size: 16px;
-  }
+    .lyrics {
+        width: 100%;
+        padding: 0 10px;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    .lyrics p {
+        line-height: 1.8;
+        word-break: keep-all;
+        margin: 0;
+    }
+
+    ul li {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+
+    .back-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
 }
-/* 기본 스타일 수정 (모바일 중심으로) */
+
+/* 기본 스타일 수정 (아이폰14 기준) */
 body {
     margin: 0;
     padding: 0 20px;
@@ -449,54 +479,29 @@ body {
   .song-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-  }
-  
-  .song-content img {
+    align-items: center;
+    gap: 20px;
     width: 100%;
+    box-sizing: border-box;
+}
+
+.song-content img {
+    width: 50%;
+    max-width: 500px;
     height: auto;
-    margin: 0;
-  }
-  
-  .lyrics {
+    margin: 0 auto;
+    display: block;
+}
+
+.lyrics {
     width: 100%;
-    font-size: 16px;
-  }
-  
-  @media (max-width: 420px) {
-    body {
-        font-size: 13px; /* 폰트 더 작게 */
-        padding: 0 20px; /* 좌우 공백 추가 */
-    }
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: left;
+}
 
-    #content {
-        width: 100%;
-        max-width: 380px; /* 너무 꽉 안 차게 조금 줄임 */
-        padding: 30px 20px; /* 내부 공백 더 늘림 */
-        min-height: 95vh; /* 세로 좀 더 길게 */
-    }
-
-    .song-content {
-        flex-direction: column; /* 이미지, 가사 세로 정렬 */
-    }
-
-    .song-content img {
-        width: 100%;
-        height: auto;
-        margin: 0 0 10px 0;
-    }
-
-    .lyrics {
-        width: 100%;
-    }
-
-    ul li {
-        padding: 6px 4px;
-        font-size: 13px; /* 트랙 목록도 살짝 줄임 */
-    }
-
-    .back-button {
-        font-size: 13px;
-        padding: 5px 10px;
-    }
+.lyrics p {
+    margin: 0;
+    line-height: 1.7;
+    word-break: keep-all;
 }
