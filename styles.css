@@ -141,3 +141,350 @@ ul li:hover {
       padding: 6px 10px;
     }
   }
+  /* 기본 스타일 수정 (모바일 중심으로) */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222; /* 차콜 색상 */
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;  /* 기본 폰트 조금 키움 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#content {
+  width: 90vw;
+  max-width: 420px;
+  background-color: #111;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* 버튼, 리스트, 텍스트 등 모바일 기준 조정 */
+ul li {
+  list-style: none;
+  padding: 14px 10px;
+  border-bottom: 1px solid #555;
+  font-size: 18px;
+}
+
+.back-button {
+  font-size: 16px;
+  padding: 10px 14px;
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.song-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.song-content img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.lyrics {
+  width: 100%;
+  font-size: 16px;
+}
+
+/* 반응형 미디어 쿼리 (아이폰 14 포함) */
+@media (max-width: 420px) {
+  #content {
+    width: 95vw;
+    padding: 16px;
+    min-height: 95vh;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  ul li {
+    padding: 12px 8px;
+    font-size: 18px;
+  }
+
+  .back-button {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .lyrics {
+    font-size: 16px;
+  }
+}/* 기본 스타일 수정 (모바일 중심으로) */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222; /* 차콜 색상 */
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;  /* 기본 폰트 조금 키움 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#content {
+  width: 90vw;
+  max-width: 420px;
+  background-color: #111;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* 버튼, 리스트, 텍스트 등 모바일 기준 조정 */
+ul li {
+  list-style: none;
+  padding: 14px 10px;
+  border-bottom: 1px solid #555;
+  font-size: 18px;
+}
+
+.back-button {
+  font-size: 16px;
+  padding: 10px 14px;
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.song-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.song-content img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.lyrics {
+  width: 100%;
+  font-size: 16px;
+}
+
+/* 반응형 미디어 쿼리 (아이폰 14 포함) */
+@media (max-width: 420px) {
+  #content {
+    width: 95vw;
+    padding: 16px;
+    min-height: 95vh;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  ul li {
+    padding: 12px 8px;
+    font-size: 18px;
+  }
+
+  .back-button {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .lyrics {
+    font-size: 16px;
+  }
+}
+/* 기본 스타일 수정 (모바일 중심으로) */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222; /* 차콜 색상 */
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;  /* 기본 폰트 조금 키움 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#content {
+  width: 90vw;
+  max-width: 420px;
+  background-color: #111;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* 버튼, 리스트, 텍스트 등 모바일 기준 조정 */
+ul li {
+  list-style: none;
+  padding: 14px 10px;
+  border-bottom: 1px solid #555;
+  font-size: 18px;
+}
+
+.back-button {
+  font-size: 16px;
+  padding: 10px 14px;
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.song-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.song-content img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.lyrics {
+  width: 100%;
+  font-size: 16px;
+}
+
+/* 반응형 미디어 쿼리 (아이폰 14 포함) */
+@media (max-width: 420px) {
+  #content {
+    width: 95vw;
+    padding: 16px;
+    min-height: 95vh;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  ul li {
+    padding: 12px 8px;
+    font-size: 18px;
+  }
+
+  .back-button {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .lyrics {
+    font-size: 16px;
+  }
+}
+/* 기본 스타일 수정 (모바일 중심으로) */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #222; /* 차콜 색상 */
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;  /* 기본 폰트 조금 키움 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #content {
+    width: 90vw;
+    max-width: 420px;
+    background-color: #111;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  /* 버튼, 리스트, 텍스트 등 모바일 기준 조정 */
+  ul li {
+    list-style: none;
+    padding: 14px 10px;
+    border-bottom: 1px solid #555;
+    font-size: 18px;
+  }
+  
+  .back-button {
+    font-size: 16px;
+    padding: 10px 14px;
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .song-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .song-content img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  
+  .lyrics {
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  /* 반응형 미디어 쿼리 (아이폰 14 포함) */
+  @media (max-width: 420px) {
+    #content {
+      width: 95vw;
+      padding: 16px;
+      min-height: 95vh;
+    }
+  
+    body {
+      font-size: 18px;
+    }
+  
+    ul li {
+      padding: 12px 8px;
+      font-size: 18px;
+    }
+  
+    .back-button {
+      font-size: 16px;
+      padding: 10px 12px;
+    }
+  
+    .lyrics {
+      font-size: 16px;
+    }
+  }

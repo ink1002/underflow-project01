@@ -4,7 +4,7 @@ function showSection(section) {
     
     if (section === 'welcome') {
         content.innerHTML = `
-        > welcome to underflow terminal
+        > welcome to UNDERFLOW terminal
         `;
         return;
     }
@@ -13,8 +13,8 @@ function showSection(section) {
         content.innerHTML = backBtn + `
         > about
         -----------------------------
-        UNDERFLOW is an indie band.
-        We play alternative, indie, shoegaze.
+        UNDERFLOW is an indie band based in Seoul.
+        We play shoegaze, alternative, city rock.
         `;
     } else if (section === 'songs') {
         content.innerHTML = backBtn + `
@@ -38,7 +38,7 @@ function showSection(section) {
         content.innerHTML = backBtn + `
         > contact
         -----------------------------
-        underflow.band@email.com
+        band.underflow@gmail.com
         `;
     }
 }
