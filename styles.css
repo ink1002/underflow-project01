@@ -116,3 +116,28 @@ ul li:hover {
     border: 1px solid #555;
     display: block;
 }
+
+/* 모바일 화면일 때 */
+@media (max-width: 420px) {
+    body {
+      font-size: 14px;  /* 글자 조금 작게 */
+    }
+    .song-content {
+      flex-direction: column; /* 이미지랑 가사 세로 배치 */
+    }
+    .song-content img {
+      width: 100%;  /* 이미지 가로 꽉 채우기 */
+      height: auto;
+      margin: 0 0 10px 0;
+    }
+    .lyrics {
+      width: 100%; /* 가사 영역도 꽉 채움 */
+    }
+    ul li {
+      padding: 8px 5px; /* 버튼 간격 좁히기 */
+    }
+    .back-button {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
