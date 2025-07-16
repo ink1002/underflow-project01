@@ -45,6 +45,7 @@ body {
 .content {
     white-space: pre-line;
     color: #fff;
+    
 }
 
 ul {
@@ -404,7 +405,7 @@ ul li {
 /* 기본 스타일 수정 (모바일 중심으로) */
 body {
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
     background-color: #222; /* 차콜 색상 */
     color: #fff;
     font-family: 'Courier New', Courier, monospace;
@@ -462,29 +463,40 @@ body {
     font-size: 16px;
   }
   
-  /* 반응형 미디어 쿼리 (아이폰 14 포함) */
   @media (max-width: 420px) {
-    #content {
-      width: 95vw;
-      padding: 16px;
-      min-height: 95vh;
-    }
-  
     body {
-      font-size: 18px;
+        font-size: 13px; /* 폰트 더 작게 */
+        padding: 0 20px; /* 좌우 공백 추가 */
     }
-  
-    ul li {
-      padding: 12px 8px;
-      font-size: 18px;
+
+    #content {
+        width: 100%;
+        max-width: 380px; /* 너무 꽉 안 차게 조금 줄임 */
+        padding: 30px 20px; /* 내부 공백 더 늘림 */
+        min-height: 95vh; /* 세로 좀 더 길게 */
     }
-  
-    .back-button {
-      font-size: 16px;
-      padding: 10px 12px;
+
+    .song-content {
+        flex-direction: column; /* 이미지, 가사 세로 정렬 */
     }
-  
+
+    .song-content img {
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+    }
+
     .lyrics {
-      font-size: 16px;
+        width: 100%;
     }
-  }
+
+    ul li {
+        padding: 6px 4px;
+        font-size: 13px; /* 트랙 목록도 살짝 줄임 */
+    }
+
+    .back-button {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}
