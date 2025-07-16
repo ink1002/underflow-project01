@@ -382,7 +382,7 @@ ul li {
 }
 @media (max-width: 420px) {
     body {
-        font-size: 14px;
+        font-size: 12px;
         padding: 0 24px;
         line-height: 1.7;
     }
@@ -399,7 +399,6 @@ ul li {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
     }
 
     .song-content img {
@@ -424,11 +423,11 @@ ul li {
 
     ul li {
         padding: 10px 5px;
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .back-button {
-        font-size: 14px;
+        font-size: 12px;
         padding: 8px 12px;
     }
 }
@@ -440,7 +439,7 @@ body {
     background-color: #222; /* 차콜 색상 */
     color: #fff;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;  /* 기본 폰트 조금 키움 */
+    font-size: 12px;  /* 기본 폰트 조금 키움 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -464,11 +463,11 @@ body {
     list-style: none;
     padding: 14px 10px;
     border-bottom: 1px solid #555;
-    font-size: 18px;
+    font-size: 12px;
   }
   
   .back-button {
-    font-size: 16px;
+    font-size: 12px;
     padding: 10px 14px;
     display: inline-block;
     margin-bottom: 20px;
