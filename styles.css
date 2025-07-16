@@ -2,451 +2,16 @@ body {
     background-color: #222;
     color: #fff;
     font-family: 'Fira Code', 'Courier New', monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.terminal {
-    background-color: #111;
-    padding: 20px;
-    width: 700px;
-    height: 500px;
-    box-shadow: 0 0 10px #555;
-    overflow-y: auto;
-}
-
-.header {
-    color: #fff;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.menu {
-    margin-bottom: 20px;
-}
-
-.menu button {
-    background-color: transparent;
-    border: none;
-    color: #ccc;
-    font-family: inherit;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: color 0.3s;
-}
-
-.menu button:hover {
-    color: #fff;
-}
-
-.content {
-    white-space: pre-line;
-    color: #fff;
-    
-}
-
-ul {
-    padding-left: 0;
-    margin: 0;
-}
-
-ul li {
-    list-style: none;
-    cursor: pointer;
-    color: #ccc;
-    margin: 2px 0;
-    line-height: 1.2;
-    font-size: 12px;
-    transition: color 0.3s;
-}
-
-ul li:hover {
-    color: #fff;
-}
-
-.song-title {
-    color: #fff;
-    font-family: inherit;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
-
-.divider {
-    color: #666;
-    font-family: inherit;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
-
-.song-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.bandcamp {
-    width: 100%;
-    text-align: center;
-}
-
-.lyrics {
-    width: 100%;
-    padding: 0 10px;
-    text-align: left;
-    box-sizing: border-box;
-}
-
-.lyrics p {
-    margin: 0;
-    line-height: 1.7;
-    word-break: keep-all;
-}
-
-.song-content img {
-    width: 70%;
-    max-width: 250px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    opacity: 0.8;
-}
-
-/* 모바일 화면일 때 */
-@media (max-width: 420px) {
-    body {
-      font-size: 12px;  /* 글자 조금 작게 */
-    }
-    .song-content {
-      flex-direction: column; /* 이미지랑 가사 세로 배치 */
-    }
-    .song-content img {
-      width: 100%;  /* 이미지 가로 꽉 채우기 */
-      height: auto;
-      margin: 0 0 10px 0;
-    }
-    .lyrics {
-      width: 100%; /* 가사 영역도 꽉 채움 */
-    }
-    ul li {
-      padding: 8px 5px; /* 버튼 간격 좁히기 */
-    }
-    .back-button {
-      font-size: 12px;
-      padding: 6px 10px;
-    }
-  }
-  /* 기본 스타일 수정 (모바일 중심으로) */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #222; /* 차콜 색상 */
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 12px;  /* 기본 폰트 조금 키움 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-#content {
-  width: 90vw;
-  max-width: 420px;
-  background-color: #111;
-  padding: 20px;
-  box-sizing: border-box;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* 버튼, 리스트, 텍스트 등 모바일 기준 조정 */
-ul li {
-  list-style: none;
-  padding: 14px 10px;
-  border-bottom: 1px solid #555;
-  font-size: 12px;
-}
-
-.back-button {
-  font-size: 12px;
-  padding: 10px 14px;
-  display: inline-block;
-  margin-bottom: 20px;
-  background-color: #333;
-  color: #fff;
-  cursor: pointer;
-}
-
-.song-content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.song-content img {
-  width: 100%;
-  height: auto;
-  margin: 0;
-}
-
-.lyrics {
-  width: 100%;
-  font-size: 16px;
-}
-
-/* 반응형 미디어 쿼리 (아이폰 14 포함) */
-@media (max-width: 420px) {
-  #content {
-    width: 95vw;
-    padding: 16px;
-    min-height: 95vh;
-  }
-
-  body {
-    font-size: 12px;
-  }
-
-  ul li {
-    padding: 12px 8px;
-    font-size: 12px;
-  }
-
-  .back-button {
-    font-size: 16px;
-    padding: 10px 12px;
-  }
-
-  .lyrics {
-    font-size: 12px;
-    word-break: keep-all;
-    line-height: 1.8;
-    max-width: 400px;
-    padding: 0 24px;
-  }
-}/* 기본 스타일 수정 (모바일 중심으로) */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #222; /* 차콜 색상 */
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 12px;  /* 기본 폰트 조금 키움 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-#content {
-  width: 90vw;
-  max-width: 420px;
-  background-color: #111;
-  padding: 20px;
-  box-sizing: border-box;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* 버튼, 리스트, 텍스트 등 모바일 기준 조정 */
-ul li {
-  list-style: none;
-  padding: 14px 10px;
-  border-bottom: 1px solid #555;
-  font-size: 12px;
-}
-
-.back-button {
-  font-size: 12px;
-  padding: 10px 14px;
-  display: inline-block;
-  margin-bottom: 20px;
-  background-color: #333;
-  color: #fff;
-  cursor: pointer;
-}
-
-.song-content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.song-content img {
-  width: 100%;
-  height: auto;
-  margin: 0;
-}
-
-.lyrics {
-  width: 100%;
-  font-size: 12px;
-}
-
-/* 반응형 미디어 쿼리 (아이폰 14 포함) */
-@media (max-width: 420px) {
-  #content {
-    width: 95vw;
-    padding: 16px;
-    min-height: 95vh;
-  }
-
-  body {
-    font-size: 12px;
-  }
-
-  ul li {
-    padding: 12px 8px;
-    font-size: 12px;
-  }
-
-  .back-button {
-    font-size: 12px;
-    padding: 10px 12px;
-  }
-
-  .lyrics {
-    font-size: 12px;
-  }
-}
-/* 기본 스타일 수정 (모바일 중심으로) */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #222; /* 차콜 색상 */
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 12px;  /* 기본 폰트 조금 키움 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-#content {
-  width: 90vw;
-  max-width: 420px;
-  background-color: #111;
-  padding: 20px;
-  box-sizing: border-box;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* 버튼, 리스트, 텍스트 등 모바일 기준 조정 */
-ul li {
-  list-style: none;
-  padding: 14px 10px;
-  border-bottom: 1px solid #555;
-  font-size: 12px;
-}
-
-.back-button {
-  font-size: 12px;
-  padding: 10px 14px;
-  display: inline-block;
-  margin-bottom: 20px;
-  background-color: #333;
-  color: #fff;
-  cursor: pointer;
-}
-
-.song-content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.song-content img {
-  width: 100%;
-  height: auto;
-  margin: 0;
-}
-
-.lyrics {
-  width: 100%;
-  font-size: 12px;
-}
-@media (max-width: 420px) {
-    body {
-        font-size: 12px;
-        padding: 0 24px;
-        line-height: 1.7;
-    }
-
-    #content {
-        width: 100%;
-        max-width: 400px;
-        padding: 40px 20px;
-        min-height: 95vh;
-        box-sizing: border-box;
-    }
-
-    .song-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .song-content img {
-        width: 70%;
-        height: auto;
-        margin: 0 auto;
-        display: block;
-    }
-
-    .lyrics {
-        width: 100%;
-        padding: 0 10px;
-        text-align: left;
-        box-sizing: border-box;
-    }
-
-    .lyrics p {
-        line-height: 1.8;
-        word-break: keep-all;
-        margin: 0;
-    }
-
-    ul li {
-        padding: 10px 5px;
-        font-size: 12px;
-    }
-
-    .back-button {
-        font-size: 12px;
-        padding: 8px 12px;
-    }
-}
-
-/* 기본 스타일 수정 (아이폰14 기준) */
-body {
     margin: 0;
     padding: 0 20px;
-    background-color: #222; /* 차콜 색상 */
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 12px;  /* 기본 폰트 조금 키움 */
+    font-size: 14px;  /* 기본 폰트 크기 여기서 조절 */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-  
-  #content {
+}
+
+#content {
     width: 90vw;
     max-width: 420px;
     background-color: #111;
@@ -456,27 +21,25 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  }
-  
-  /* 버튼, 리스트, 텍스트 등 모바일 기준 조정 */
-  ul li {
+}
+
+ul li {
     list-style: none;
-    padding: 14px 10px;
-    border-bottom: 1px solid #555;
-    font-size: 12px;
-  }
-  
-  .back-button {
-    font-size: 12px;
-    padding: 10px 14px;
-    display: inline-block;
-    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 14px;   /* 여기서 리스트 크기 조절 */
+    color: #ccc;
+}
+
+.back-button {
+    font-size: 14px;
+    padding: 8px 12px;
     background-color: #333;
     color: #fff;
+    margin-bottom: 20px;
     cursor: pointer;
-  }
-  
-  .song-content {
+}
+
+.song-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -486,22 +49,44 @@ body {
 }
 
 .song-content img {
-    width: 50%;
-    max-width: 500px;
+    width: 70%;
+    max-width: 300px;
     height: auto;
     margin: 0 auto;
-    display: block;
 }
 
 .lyrics {
     width: 100%;
-    box-sizing: border-box;
     padding: 0 10px;
+    font-size: 14px;
+    line-height: 1.7;
     text-align: left;
+    word-break: keep-all;
 }
 
-.lyrics p {
-    margin: 0;
-    line-height: 1.7;
-    word-break: keep-all;
+.bandcamp {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 420px) {
+    body {
+        font-size: 12px;
+        padding: 0 16px;
+    }
+
+    ul li {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .lyrics {
+        font-size: 12px;
+        padding: 0 8px;
+    }
+
+    .back-button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 }
