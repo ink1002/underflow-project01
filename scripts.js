@@ -21,14 +21,14 @@ function showSection(section) {
         > songs
         -----------------------------
         <ul>
-            <li onclick="showSong('shadow')">1. 그림자 (Shadow)</li>
-            <li onclick="showSong('urbanfairytale')">2. 도시동화 (urbanfairytale)</li>
+            <li onclick="showSong('shadow')">1. 그림자(Shadow)</li>
+            <li onclick="showSong('urbanfairytale')">2. 도시동화(urbanfairytale)</li>
             <li onclick="showSong('eoltteol')">3. 얼떨결에</li>
             <li onclick="showSong('oddrun')">4. Odd Run</li>
             <li onclick="showSong('ireohji')">5. 이렇지</li>
             <li onclick="showSong('ifeellove')">6. I Feel Love</li>
             <li onclick="showSong('soom')">7. Soom</li>
-            <li onclick="showSong('ssauji')">8. 싸우지 말아요</li>
+            <li onclick="showSong('ssauji')">8. 싸우지말아요</li>
             <li onclick="showSong('intro')">9. Intro</li>
             <li onclick="showSong('balhwa')">10. 발화</li>
             <li onclick="showSong('morgan')">11. Morgan</li>
@@ -74,7 +74,21 @@ function showSong(song) {
         morgan: `Things’d not be okay\nI don’t think it’d be easy\n\nEverything goes higher\nIt will make us tired\nI know there’s a liar\n\nFeel goes on highway\nOh did you love her\nIt's not forever\nthat you desired\n\nyou got no power\nlike this long summer\nwaiting october\nwhile you desire\n\nFeel goes on highway\nOh did you love her\nIt's not forever\nthat you desired\n\nyou got no power\nlike this long summer\nwaiting october\nwhile you desire`
     };
 
-    const imgSrc = song === 'shadow' || song === 'eoltteol' || song === 'ireohji' || song === 'soom' ? "images/song1.jpg" : "images/song2.jpg";
+    const songImageNumbers = {
+        shadow: image1.jpg,
+        urbanfairytale: image2.jpeg,
+        eoltteol: image3.jpg,
+        oddrun: image4.jpg,
+        ireohji:image5.jpeg5,
+        ifeellove: image6.jpeg,
+        soom: image7.jpeg,
+        ssauji: image8.jpg,
+        intro: image9.jpeg,
+        balhwa: image10.jpeg,
+        morgan: image11.jpeg
+    };
+
+    const imgSrc = `images/image${songImageNumbers[song]}.jpg`;
 
     content.innerHTML = backBtn + `
     <div class="song-title">&gt; ${songs[song]}</div>
