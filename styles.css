@@ -27,24 +27,40 @@ body {
     color: #fff;
     font-weight: bold;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-shadow:
+        1px 1px 0 #331,
+        2px 2px 0 #332,
+        3px 3px 0 #333;
 }
 
 .menu {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    flex-direction: column; /* 가로 -> 세로 정렬 */
+    gap: 5px;
+    margin-bottom: 10px;
+    width: fit-content;   /* 버튼 크기를 텍스트 길이에 맞게 자동 조절 */
+    align-self: flex-start; 
 }
-
 .menu button {
     background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #222222;
     color: #fff;
-    font-family: inherit;
+    font-family: 'Fira Code', 'Courier New', monospace;
     cursor: pointer;
-    padding: 5px 10px;
-    transition: 0.3s;
-    font-size: 14px;
+    padding: 6px 14px;
+    transition: all 0.3s;
+    font-size: 12px;
+    width: fit-content;
+    align-self: flex-start;
+    letter-spacing: 1px;
+}
+
+.menu button:hover {
+    background-color: #222;
+    color: #fff;
+    box-shadow: 0 0 8px #fff;
 }
 
 .menu button:hover {
@@ -86,7 +102,7 @@ ul li {
 .lyrics {
     width: 100%;
     padding: 0 10px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.6;
     text-align: left;
     word-break: keep-all;
@@ -101,11 +117,27 @@ ul li {
 }
 
 .back-button {
-    font-size: 14px;
+    font-size: 12px;
     padding: 6px 10px;
-    background-color: #333;
+    background-color: #111;
     color: #fff;
     cursor: pointer;
+}
+.cursor {
+    display: inline-block;
+    width: 8px;
+    background-color: #fff;
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes blink {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 @media (max-width: 420px) {
