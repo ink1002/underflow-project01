@@ -74,38 +74,23 @@ function showSong(song) {
         morgan: `Things’d not be okay\nI don’t think it’d be easy\n\nEverything goes higher\nIt will make us tired\nI know there’s a liar\n\nFeel goes on highway\nOh did you love her\nIt's not forever\nthat you desired\n\nyou got no power\nlike this long summer\nwaiting october\nwhile you desire\n\nFeel goes on highway\nOh did you love her\nIt's not forever\nthat you desired\n\nyou got no power\nlike this long summer\nwaiting october\nwhile you desire`
     };
 
-    const songImageNumbers = {
-        shadow: '1.jpg',
-        urbanfairytale: '2.jpeg',
-        eoltteol: '3.jpeg',
-        oddrun: '4.jpg',
-        ireohji: '5.jpeg',
-        ifeellove: '6.jpeg',
-        soom: '7.jpeg',
-        ssauji: '8.jpg',
-        intro: '9.jpeg',
-        balhwa: '10.jpeg',
-        morgan: '11.jpeg'
+    const bandcampEmbeds = {
+        shadow: `<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=small/bgcol=333333/linkcol=ffffff/transparent=true/" seamless><a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a></iframe>`,
+        // 필요하면 다른 곡도 여기 추가하면 됨.
     };
 
-    const imgSrc = `images/image${songImageNumbers[song]}`;
-
-    content.innerHTML = backBtn + `
+content.innerHTML = backBtn + `
     <div class="song-title">&gt; ${songs[song]}</div>
     <div class="divider">-----------------------------</div>
     <div class="song-content">
-        <img src="${imgSrc}" alt="${songs[song]}">
+        <div class="bandcamp">
+            ${song === 'shadow' ? `<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a></iframe>` : ''}
+        </div>
         <div class="lyrics">
             <p>lyrics:<br>${lyrics[song].replace(/\n/g, '<br>')}</p>
-            ${song === 'shadow' ? `<div class="bandcamp" style="margin-top: 20px;">
-                <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=small/bgcol=333333/linkcol=ffffff/transparent=true/" seamless>
-                    <a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a>
-                </iframe>
-            </div>` : ''}
         </div>
     </div>
-`;
-            }
+`;  }
 
 function addCursor() {
     const content = document.getElementById('content');
