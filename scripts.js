@@ -97,11 +97,15 @@ function showSong(song) {
         <img src="${imgSrc}" alt="${songs[song]}">
         <div class="lyrics">
             <p>lyrics:<br>${lyrics[song].replace(/\n/g, '<br>')}</p>
-            <p style="margin-top: 20px;">[Bandcamp embed 자리]</p>
+            ${song === 'shadow' ? `<div class="bandcamp" style="margin-top: 20px;">
+                <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=small/bgcol=333333/linkcol=ffffff/transparent=true/" seamless>
+                    <a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a>
+                </iframe>
+            </div>` : ''}
         </div>
     </div>
-    `;
-}
+`;
+            }
 
 function addCursor() {
     const content = document.getElementById('content');
