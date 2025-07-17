@@ -83,14 +83,15 @@ content.innerHTML = backBtn + `
     <div class="song-title">&gt; ${songs[song]}</div>
     <div class="divider">-----------------------------</div>
     <div class="song-content">
-        <div class="bandcamp">
-            ${song === 'shadow' ? `<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a></iframe>` : ''}
-        </div>
+        ${song === 'shadow' ? `<div class="bandcamp">
+            <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a></iframe>
+        </div>` : ''}
         <div class="lyrics">
             <p>lyrics:<br>${lyrics[song].replace(/\n/g, '<br>')}</p>
         </div>
     </div>
-`;  }
+`;
+ }
 
 function addCursor() {
     const content = document.getElementById('content');
