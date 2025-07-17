@@ -2,6 +2,7 @@ function showSection(section) {
     const content = document.getElementById('content');
     const backBtn = `<div class="back-button" onclick="showSection('welcome')">&lt; back</div>\n`;
     
+    
     if (section === 'welcome') {
         content.innerHTML = `
         > welcome to UNDERFLOW terminal
@@ -42,10 +43,11 @@ function showSection(section) {
         `;
     }
 }
-function showSong(song) {
-    const content = document.getElementById('content');
-    const backBtn = `<div class="back-button" onclick="showSection('songs')">&lt; back</div>\n`;
-
+    function showSong(song) {
+        document.getElementById('loading')?.classList.remove('hidden');
+        const content = document.getElementById('content');
+        const backBtn = `<div class="back-button" onclick="showSection('songs')">&lt; back</div>\n`;
+    
     const songs = {
         shadow: "그림자 (Shadow)",
         urbanfairytale: "도시동화 (urbanfairytale)",
@@ -79,20 +81,24 @@ function showSong(song) {
         // 필요하면 다른 곡도 여기 추가하면 됨.
     };
 
+    const iframeHTML = `<iframe 
+    onload="document.querySelector('.loading').style.display='none'"
+    style="border: 0; width: 350px; height: 470px;" 
+    src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless>
+    <a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a></iframe>`;
+
 content.innerHTML = backBtn + `
     <div class="song-title">&gt; ${songs[song]}</div>
     <div class="divider">-----------------------------</div>
     <div class="song-content">
-        ${song === 'shadow' ? `<div class="bandcamp">
-            <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a></iframe>
-        </div>` : ''}
+        <div class="loading">Loading...</div>
+        <div class="bandcamp">${iframeHTML}</div>
         <div class="lyrics">
             <p>lyrics:<br>${lyrics[song].replace(/\n/g, '<br>')}</p>
         </div>
     </div>
 `;
  }
-
 function addCursor() {
     const content = document.getElementById('content');
     if (!content.querySelector('.cursor')) {
