@@ -1,12 +1,9 @@
 function showSection(section) {
     const content = document.getElementById('content');
     const backBtn = `<div class="back-button" onclick="showSection('welcome')">&lt; back</div>\n`;
-    
-    
+
     if (section === 'welcome') {
-        content.innerHTML = `
-        > welcome to UNDERFLOW terminal
-        `;
+        content.innerHTML = `> welcome to UNDERFLOW terminal<span class="cursor">|</span>`;
         return;
     }
 
@@ -43,11 +40,11 @@ function showSection(section) {
         `;
     }
 }
-    function showSong(song) {
-        document.getElementById('loading')?.classList.remove('hidden');
-        const content = document.getElementById('content');
-        const backBtn = `<div class="back-button" onclick="showSection('songs')">&lt; back</div>\n`;
-    
+
+function showSong(song) {
+    const content = document.getElementById('content');
+    const backBtn = `<div class="back-button" onclick="showSection('songs')">&lt; back</div>\n`;
+
     const songs = {
         shadow: "그림자 (Shadow)",
         urbanfairytale: "도시동화 (urbanfairytale)",
@@ -76,35 +73,61 @@ function showSection(section) {
         morgan: `Things’d not be okay\nI don’t think it’d be easy\n\nEverything goes higher\nIt will make us tired\nI know there’s a liar\n\nFeel goes on highway\nOh did you love her\nIt's not forever\nthat you desired\n\nyou got no power\nlike this long summer\nwaiting october\nwhile you desire\n\nFeel goes on highway\nOh did you love her\nIt's not forever\nthat you desired\n\nyou got no power\nlike this long summer\nwaiting october\nwhile you desire`
     };
 
-    const bandcampEmbeds = {
-        shadow: `<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=small/bgcol=333333/linkcol=ffffff/transparent=true/" seamless><a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a></iframe>`,
-        // 필요하면 다른 곡도 여기 추가하면 됨.
-    };
+    
+    const iframeHTML = `<iframe
+        style="border: 0; width: 350px; height: 470px;"
+        src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/"
+        seamless>
+        <a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a>
+    </iframe>`;
 
-    const iframeHTML = `<iframe 
-    onload="document.querySelector('.loading').style.display='none'"
-    style="border: 0; width: 350px; height: 470px;" 
-    src="https://bandcamp.com/EmbeddedPlayer/album=1678211662/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless>
-    <a href="https://underfloww.bandcamp.com/album/shadow">Shadow(그림자) by underflow(언더플로우)</a></iframe>`;
-
-content.innerHTML = backBtn + `
-    <div class="song-title">&gt; ${songs[song]}</div>
-    <div class="divider">-----------------------------</div>
-    <div class="song-content">
-        <div class="loading">Loading...</div>
-        <div class="bandcamp">${iframeHTML}</div>
-        <div class="lyrics">
-            <p>lyrics:<br>${lyrics[song].replace(/\n/g, '<br>')}</p>
+    content.innerHTML = backBtn + `
+        <div class="song-title">&gt; ${songs[song]}</div>
+        <div class="divider">-----------------------------</div>
+        <div class="song-content">
+            <div class="bandcamp">${iframeHTML}</div>
+            <div class="lyrics">
+                <p>lyrics:<br>${lyrics[song] ? lyrics[song].replace(/\n/g, '<br>') : '가사가 없습니다.'}</p>
+            </div>
         </div>
-    </div>
-`;
- }
-function addCursor() {
-    const content = document.getElementById('content');
-    if (!content.querySelector('.cursor')) {
-        const cursor = document.createElement('span');
-        cursor.className = 'cursor';
-        cursor.textContent = '|';
-        content.appendChild(cursor);
-    }
+    `;
+
+    // 클릭 로그 보내기 예시 (노래 제목 클릭 로그)
+    fetch('http://localhost:3000/log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            event_type: 'click',
+            target: `song-${song}`
+        })
+    });
 }
+
+// 방문 로그 전송 (페이지 로드 시)
+window.addEventListener('load', () => {
+    fetch('http://localhost:3000/log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            event_type: 'visit',
+            target: 'homepage'
+        })
+    });
+});
+
+// 클릭 로그 전송 (visit-btn 클릭 시)
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('visit-btn');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            fetch('http://localhost:3000/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    event_type: 'click',
+                    target: 'visit-btn'
+                })
+            });
+        });
+    }
+});
