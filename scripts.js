@@ -103,6 +103,15 @@ function showSong(song) {
     });
 }
 
+document.addEventListener('mousemove', function(e) {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+    const offsetX = (x - 0.5) * 30; // 움직이는 범위 조정
+    const offsetY = (y - 0.5) * 30;
+
+    document.body.style.backgroundPosition = `${50 + offsetX}% ${50 + offsetY}%`;
+});
+
 // 방문 로그 전송 (페이지 로드 시)
 window.addEventListener('load', () => {
     fetch('http://localhost:3000/log', {

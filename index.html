@@ -22,15 +22,26 @@
     <script src="scripts.js"></script>
 
     <!-- 방문자 기록 (페이지 로드 시) -->
-    <script>
-      fetch('http://localhost:3000/log', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event_type: 'visit',
-          target: 'homepage'
-        })
-      });
-    </script>
-</body>
-</html>
+  <!-- 방문자 기록 (페이지 로드 시) -->
+<script>
+  fetch('http://localhost:3000/log', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event_type: 'visit',
+      target: 'homepage'
+    })
+  });
+</script>
+
+<!-- 마우스 따라 배경 움직임 -->
+<script>
+  document.addEventListener('mousemove', function(e) {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+    const offsetX = (x - 0.5) * 10;
+    const offsetY = (y - 0.5) * 10;
+
+    document.body.style.backgroundPosition = `${50 + offsetX}% ${50 + offsetY}%`;
+  });
+</script>
