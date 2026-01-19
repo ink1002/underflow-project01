@@ -44,7 +44,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('main.jpg'); /* 여기에 이미지 파일명 입력 */
+            background-image: url('intro-bg.jpg');
             background-size: cover;
             background-position: center;
             opacity: 0.3;
@@ -173,16 +173,6 @@
             animation: fadeIn 0.5s forwards;
         }
 
-        .cursor {
-            animation: blink 1s infinite;
-            color: #999;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-
         h3 {
             color: #444;
             margin-bottom: 20px;
@@ -304,17 +294,22 @@
     </style>
 </head>
 <body>
-    <div class="terminal">
-        <div class="header">U N D E R F L O W</div>
-        <div class="menu">
-            <button onclick="showSection('welcome')">home</button>
-            <button onclick="showSection('songs')">songs</button>
-            <button onclick="showSection('archive')">archive</button>
-            <button onclick="showSection('about')">about</button>
-            <button onclick="showSection('contact')">contact</button>
-        </div>
+    <!-- 인트로 화면 -->
+    <div class="intro-section" id="intro" onclick="enterSite()">
+        <div class="intro-title">U N D E R F L O W</div>
+    </div>
+
+    <!-- 메인 사이트 -->
+    <div class="terminal" id="terminal">
+        <div class="header" onclick="showHome()">U N D E R F L O W</div>
         
-        <div id="welcome" class="content" style="display: none;">
+        <div class="home-section active" id="home">
+            <div class="menu">
+                <button onclick="showSection('songs')">songs</button>
+                <button onclick="showSection('archive')">archive</button>
+                <button onclick="showSection('about')">about</button>
+                <button onclick="showSection('contact')">contact</button>
+            </div>
         </div>
 
         <div id="songs" class="content">
@@ -381,7 +376,6 @@
         }
 
         function showSection(sectionId) {
-            // 모든 섹션 숨기기
             const home = document.getElementById('home');
             const sections = document.querySelectorAll('.content');
             
@@ -393,7 +387,6 @@
                 section.classList.remove('active');
             });
             
-            // 선택한 섹션 보이기
             const targetSection = document.getElementById(sectionId);
             if (targetSection) {
                 setTimeout(() => {
@@ -404,13 +397,11 @@
         }
 
         function showHome() {
-            // 모든 섹션 숨기기
             const sections = document.querySelectorAll('.content');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
             
-            // 홈 섹션 보이기
             const home = document.getElementById('home');
             if (home) {
                 setTimeout(() => {
@@ -432,7 +423,6 @@
             modal.classList.remove('active');
         }
 
-        // 마우스 따라 배경 움직임
         document.addEventListener('mousemove', function(e) {
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
