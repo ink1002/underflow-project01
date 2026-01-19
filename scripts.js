@@ -13,7 +13,13 @@ function showSection(section) {
         -----------------------------
         Based in Seoul\nshoegaze, city rock\n\n[UNDERFLOW]는 소외, 얕은 관계성, 이해관계와 피로, 일상의 과한 투명도와 흩어지는 자아에 대해 말합니다.우리의 음악엔 언제나 곁에 있어왔던 작은 부조리들과 혼란에 대한 반항이 담겨 있습니다.각자의 세계 속 내밀한 단면들, 그리고 그것들을 둘러싼 넓은 사회상과 전경 저변으로 흩어진 사람들의 희미한 흔적에 관하여, 우린 듣는 이들에게 소상히 전달드리고자 합니다.\n\n[UNDERFLOW] tells about the broad societal landscape that surrounds us and the faint traces of people scattered in the background.
         `;
-    } else if (section === 'songs') {
+    }
+    else if (section === 'archive') {
+    const archiveContent = document.getElementById('archive');
+    const content = document.getElementById('content');
+    content.innerHTML = backBtn + archiveContent.innerHTML;
+}
+    else if (section === 'songs') {
         content.innerHTML = backBtn + `
         > songs
         -----------------------------
@@ -140,3 +146,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// 이미지 클릭 시 모달 열기
+document.addEventListener('click', function (e) {
+  if (e.target.tagName === 'IMG' && e.target.closest('.booklet-gallery')) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    modalImg.src = e.target.src;
+    modal.style.display = 'flex';
+  }
+});
+
+// 모달 닫기
+function closeModal() {
+  document.getElementById('imageModal').style.display = 'none';
+}

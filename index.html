@@ -11,12 +11,45 @@
         <div class="header">U N D E R F L O W</div>
         <div class="menu">
             <button onclick="showSection('songs')">songs</button>
+            <button onclick="showSection('archive')">archive</button>
             <button onclick="showSection('about')">about</button>
             <button onclick="showSection('contact')">contact</button>
         </div>
         <div id="content" class="content">
             &gt; welcome to UNDERFLOW terminal<span class="cursor">|</span>
         </div>
+        <div id="archive" class="content" style="display: none;">
+  <h3>archive</h3>
+  <ul>
+    <li>
+      🧼 <a href="https://www.instagram.com/p/DJ_fEslzbaB/?igsh=ZmUxcW5zd24xczZx" target="_blank">세탁소매거진 X underflow 인터뷰</a>
+    </li>
+    <li>
+      📚 책자 1 - <strong>Morgan</strong><br />
+      <div class="booklet-gallery">
+        <img src="images/booklet1-1.jpg" alt="Morgan - page 1" />
+        <img src="images/booklet1-2.jpg" alt="Morgan - page 2" />
+      </div>
+    </li>
+    <li>
+      📚 책자 2 - <strong>그림자</strong><br />
+      <div class="booklet-gallery">
+        <img src="images/booklet2-1.jpg" alt="그림자 - page 1" />
+        <img src="images/booklet2-2.jpg" alt="그림자 - page 2" />
+      </div>
+    </li>
+    <li>
+      📚 책자 3 - <strong>도시동화</strong><br />
+      <div class="booklet-gallery">
+        <img src="images/booklet3-1.jpg" alt="도시동화 - page 1" />
+        <img src="images/booklet3-2.jpg" alt="도시동화 - page 2" />
+      </div>
+      <div id="imageModal" class="modal" onclick="closeModal()">
+  <img id="modalImg" src="" alt="확대 이미지" />
+</div>
+    </li>
+  </ul>
+</div>
     </div>
 
     <script src="scripts.js"></script>
