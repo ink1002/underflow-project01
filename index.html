@@ -13,12 +13,13 @@
 
         body {
             font-family: 'Courier New', monospace;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            background-size: 200% 200%;
+            background-image: url('main.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             min-height: 100vh;
             padding: 0;
             margin: 0;
-            transition: background-position 0.3s ease;
         }
 
         .intro-section {
@@ -26,7 +27,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            background-image: url('main.jpeg');
+            background-size: cover;
+            background-position: center;
             cursor: pointer;
             position: relative;
             opacity: 1;
@@ -37,25 +40,12 @@
             opacity: 0;
         }
 
-        .intro-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('main.jpeg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
-            z-index: 1;
-        }
-
         .intro-title {
-            font-size: 32px;
+            font-size: 19px;
             letter-spacing: 16px;
-            color: #555;
-            font-weight: bold;
+            color: #666;
+            font-family: 'Courier New', monospace;
+            font-weight: 400;
             text-align: center;
             z-index: 2;
             position: relative;
@@ -74,7 +64,7 @@
         }
 
         .terminal {
-            background: white;
+            background: transparent;
             min-height: 100vh;
             width: 100%;
             display: none;
@@ -85,58 +75,71 @@
             animation: fadeIn 0.5s forwards;
         }
 
-        .header {
-            background: linear-gradient(to right, #f8f8f8, #f0f0f0);
-            color: #555;
-            padding: 20px;
-            text-align: center;
-            font-size: 32px;
-            letter-spacing: 8px;
-            border-bottom: 2px solid #e0e0e0;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .header:hover {
-            background: linear-gradient(to right, #f0f0f0, #e8e8e8);
-        }
-
         .menu {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
             align-items: center;
-            border-bottom: 1px solid #e8e8e8;
-            min-height: calc(100vh - 80px);
+            min-height: 100vh;
             justify-content: center;
         }
 
         .menu button {
-            padding: 12px 40px;
+            background: none;
+            border: none;
+            color: #666;
+            padding: 15px 40px;
             cursor: pointer;
             font-family: 'Courier New', monospace;
-            font-size: 14px;
-            border-radius: 6px;
+            font-size: 16px;
             transition: all 0.3s ease;
             width: 200px;
         }
 
         .menu button:hover {
-            background: #f0f0f0;
+            color: #333;
             transform: translateY(-2px);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #666;
+            color: #333;
+            font-size: 32px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            line-height: 1;
+        }
+
+        .back-button.active {
+            display: block;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 1);
+            color: #000;
+            transform: scale(1.1);
         }
 
         .content {
             padding: 60px 40px;
-            min-height: calc(100vh - 80px);
-            color: #555;
+            min-height: 100vh;
+            color: #333;
             line-height: 1.8;
             max-width: 900px;
             margin: 0 auto;
             display: none;
             opacity: 0;
             transition: opacity 0.5s ease;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
         }
 
         .content.active {
@@ -151,7 +154,7 @@
         }
 
         .home-section {
-            min-height: calc(100vh - 80px);
+            min-height: 100vh;
             display: none;
             flex-direction: column;
             align-items: center;
@@ -260,14 +263,8 @@
 
         @media (max-width: 768px) {
             .intro-title {
-                font-size: 36px;
-                letter-spacing: 8px;
-            }
-
-            .header {
-                font-size: 18px;
-                letter-spacing: 4px;
-                padding: 15px;
+                font-size: 17px;
+                letter-spacing: 6px;
             }
 
             .menu button {
@@ -292,7 +289,9 @@
     </div>
 
     <!-- 메인 사이트 -->
-    <div class="terminal" id="terminal">        
+    <div class="terminal" id="terminal">
+        <div class="header" onclick="showHome()">U N D E R F L O W</div>
+        
         <div class="home-section active" id="home">
             <div class="menu">
                 <button onclick="showSection('songs')">songs</button>
@@ -368,6 +367,7 @@
         function showSection(sectionId) {
             const home = document.getElementById('home');
             const sections = document.querySelectorAll('.content');
+            const backButton = document.getElementById('backButton');
             
             if (home) {
                 home.classList.remove('active');
@@ -381,6 +381,9 @@
             if (targetSection) {
                 setTimeout(() => {
                     targetSection.classList.add('active');
+                    if (backButton) {
+                        backButton.classList.add('active');
+                    }
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 100);
             }
@@ -388,9 +391,15 @@
 
         function showHome() {
             const sections = document.querySelectorAll('.content');
+            const backButton = document.getElementById('backButton');
+            
             sections.forEach(section => {
                 section.classList.remove('active');
             });
+            
+            if (backButton) {
+                backButton.classList.remove('active');
+            }
             
             const home = document.getElementById('home');
             if (home) {
