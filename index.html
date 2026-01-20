@@ -13,10 +13,11 @@
 
         body {
             font-family: 'Courier New', monospace;
-            background-image: url('main.jpeg');
+            background-image: url('images/main.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            background-repeat: no-repeat;
             min-height: 100vh;
             padding: 0;
             margin: 0;
@@ -27,7 +28,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url('main.jpeg');
+            background-image: url('images/main.jpeg');
             background-size: cover;
             background-position: center;
             cursor: pointer;
@@ -103,23 +104,21 @@
 
         .back-button {
             position: fixed;
-            top: 30px;
-            right: 30px;
-            background: rgba(255, 255, 255, 0.8);
-            border: 2px solid #666;
-            color: #333;
-            font-size: 32px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: red;
+            border: 5px solid black;
+            color: white;
+            font-size: 50px;
             cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
+            z-index: 9999;
             display: none;
-            padding: 10px 15px;
-            border-radius: 8px;
-            line-height: 1;
+            padding: 20px 30px;
         }
 
         .back-button.active {
-            display: block;
+            display: block !important;
         }
 
         .back-button:hover {
@@ -315,22 +314,22 @@
                 <li>
                     📚 책자 1 - <strong>Morgan</strong><br />
                     <div class="booklet-gallery">
-                        <img src="https://via.placeholder.com/200x280/f0f0f0/666?text=Morgan+1" alt="Morgan - page 1" onclick="openModal(this.src)" />
-                        <img src="https://via.placeholder.com/200x280/f0f0f0/666?text=Morgan+2" alt="Morgan - page 2" onclick="openModal(this.src)" />
+                        <img src="images/morgan1.jpg" alt="Morgan - page 1" onclick="openModal(this.src)" />
+                        <img src="images/morgan2.jpg" alt="Morgan - page 2" onclick="openModal(this.src)" />
                     </div>
                 </li>
                 <li>
                     📚 책자 2 - <strong>그림자</strong><br />
                     <div class="booklet-gallery">
-                        <img src="https://via.placeholder.com/200x280/f0f0f0/666?text=그림자+1" alt="그림자 - page 1" onclick="openModal(this.src)" />
-                        <img src="https://via.placeholder.com/200x280/f0f0f0/666?text=그림자+2" alt="그림자 - page 2" onclick="openModal(this.src)" />
+                        <img src="images/shadow1.jpg" alt="그림자 - page 1" onclick="openModal(this.src)" />
+                        <img src="images/shadow2.jpg" alt="그림자 - page 2" onclick="openModal(this.src)" />
                     </div>
                 </li>
                 <li>
                     📚 책자 3 - <strong>도시동화</strong><br />
                     <div class="booklet-gallery">
-                        <img src="https://via.placeholder.com/200x280/f0f0f0/666?text=도시동화+1" alt="도시동화 - page 1" onclick="openModal(this.src)" />
-                        <img src="https://via.placeholder.com/200x280/f0f0f0/666?text=도시동화+2" alt="도시동화 - page 2" onclick="openModal(this.src)" />
+                        <img src="images/city1.jpg" alt="도시동화 - page 1" onclick="openModal(this.src)" />
+                        <img src="images/city2.jpg" alt="도시동화 - page 2" onclick="openModal(this.src)" />
                     </div>
                 </li>
             </ul>
